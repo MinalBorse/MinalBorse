@@ -1,0 +1,36 @@
+name: Update project list
+
+on:
+  schedule:
+    - cron: "0 6 * * *"      # every day at 06:00 UTC
+  workflow_dispatch:          # lets you run it manually from the Actions tab
+  push:
+    paths:
+      - "scripts/update_readme.py"
+      - ".github/workflows/update-projects.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild project list
+        env:
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+          INCLUDE_PRIVATE: "true"   # set to "false" to show public repos only
+        run: python scripts/update_readme.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "readme-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || (git commit -m "🤖 Update project list" && git push)

@@ -60,13 +60,13 @@ class MinalBorse(AIEngineer):
 
 ---
 
-## 🍳 Currently Cooking
+## 🍳 The Kitchen (all my projects, auto-updated)
 
-| Project | Description | Status |
-|---|---|---|
-| 🧾 **SAP Input Guardian** | AI agent that catches wrong entries in SAP before they become *"why is this invoice 10,000 kg of paper?"* | `▓▓▓▓▓▓░░░░ 60%` |
-| 📊 **Chat-to-Dashboard** | Upload a dataset, type what you want, get a dashboard. Like magic, but with more `try/except` | `▓▓▓▓░░░░░░ 40%` |
-| 🌏 **Culture Bridge** | Intercultural app connecting people through festivals, food and family events | `▓▓░░░░░░░░ 20%` (still in the "napkin sketch" phase) |
+> 🔥 Cooking = touched this week · 🍲 Simmering = this month · 😴 Resting = this year · 🧊 In the freezer = older
+
+<!-- PROJECTS:START -->
+_The bot is preheating the oven... the project list appears after the first run._
+<!-- PROJECTS:END -->
 
 ---
 
